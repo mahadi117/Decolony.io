@@ -11,11 +11,40 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
+
+	<!-- Add Google Maps -->
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+		<script>
+		<!-- Google Map Location -->
+		var myCenter = new google.maps.LatLng(41.878114, -87.629798);
+
+			function initialize() {
+			var mapProp = {
+				center: myCenter,
+				zoom: 12,
+				scrollwheel: false,
+				draggable: false,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+
+		var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+		var marker = new google.maps.Marker({
+			position: myCenter,
+		});
+
+		marker.setMap(map);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -23,23 +52,43 @@
 		</noscript>
 	</head>
 	<body class="homepage">
-
-		<!-- Header -->
-		<div id="header-wrapper">
+		<!-- Navbar (sit on top) -->
+		<div class="w3-top">
+				<ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
+					<li>
+						<a href="#home" class="w3-margin-left"><b>DECOLONY</b>.IO</a>
+					</li>
+				<!-- Float links to the right. Hide them on small screens -->
+					<li class="w3-right w3-hide-small">
+						<a href="#projects" class="w3-right w3-margin-right">HOME</a>
+						<li><a href="twocolumn2.html" class="w3-left w3-margin-right">CLIENT</a></li>
+						<a href="#about" class="w3-left w3-margin-right">SOCIAL</a>
+						<a href="#contact" class="w3-left w3-margin-right">CONTACT US</a>
+						
+					</li>
+				</ul>
+		</div>
 		
-        	<div id="header" class="container">
+	
+		<!-- Header -->
+		<div id="header" class="header-modifer w3-container w3-teal">
             
-            	<div id="logo"><h1><a href="#">DECOLONY.io</a></h1></div>
-                <nav id="nav">
+            	<div id="logo" class="header-modifer"><h1><a href="#">DECOLONY.io</a></h1></div>
+                <nav id="nav" class="header-modifer">
                     <ul>
                         <li class="current_page_item"><a href="index.html">HOME</a></li>
                         <li><a href="twocolumn1.html">CLIENT</a></li>
                         <li><a href="twocolumn2.html">SOCIAL</a></li>
                         <li><a href="onecolumn.html">CONTACT US</a></li>
+					
                     </ul>
                 </nav>
                 
-            </div>
+            </div>		
+		
+		<div id="header-wrapper">
+		
+        	
 			
 			<div id="banner">
 				<div class="container">
@@ -70,7 +119,7 @@
                            <header>
 	                           <h2>Sweet rewards</h2>
                            </header>
-                            <span class="pennant"><span class="fa fa-apple"></span></span>
+                            <span class="pennant"><span class="fa fa-plane"></span></span>
                             <p> Do you want to get rewards? </p>
                             <a href="#" class="button button-style1">Read More</a>
                         </section>
@@ -86,7 +135,7 @@
                             <header>
 	                            <h2>Cash Flow</h2>
                             </header>
-                            <span class="pennant"><span class="fa fa-cogs"></span></span>
+                            <span class="pennant"><span class="fa fa-money"></span></span>
                             <p>Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo.</p>
                             <a href="#" class="button button-style1">Read More</a>
                         </section>
@@ -102,21 +151,54 @@
 			
 		<!-- Another Featured wrapper -->
 	
-		<div id="banner">
-				<div class=" featured-wrapperD">
-					<div class="row">
-						<section class="12u">
-							<header>
-								<h2>DO YOU WANT TO DECOLONIZE THE WORK MONOTONY?</h2>
-								<span class="byline"> WELL HERE YOU CAN!</span>
-							</header>
-							<a href="#" class="button button-alt">Read More</a>
-							
+		<div id="featured-wrapper1">
+			
+				<div class="container">
+					<div class="row double">
+					
+                        <section class="4u">
+                           <header>
+	                           <h2>Sweet rewards</h2>
+                           </header>
+						   <div class="w3-card-12 w3-hover-shadow">
+								<img src="img_fjords.jpg" alt="Norway">
+									<div class="w3-container w3-center">
+										<p>The Troll's tongue in Hardanger, Norway</p>
+									</div>
+							</div>
+                            <a href="#" class="button button-style1">Read More</a>
+                        </section>
+                        <section class="4u">
+                            <header>
+	                            <h2>POC</h2>
+                            </header>
+                            <div class="w3-card-12 w3-hover-shadow">
+								<img src="img_fjords.jpg" alt="Norway">
+									<div class="w3-container w3-center">
+										<p>The Troll's tongue in Hardanger, Norway</p>
+									</div>
+							</div>
+                            <a href="#" class="button button-style1">Read More</a>
+							<p><button class="w3-btn w3-blue">Read More</button></p>
 						</section>
+                        <section class="4u">
+                            <header>
+	                            <h2>Cash Flow</h2>
+                            </header>
+                            <div class="w3-card-12 w3-hover-shadow">
+								<img src="img_fjords.jpg" alt="Norway">
+									<div class="w3-container w3-center">
+										<p>The Troll's tongue in Hardanger, Norway</p>
+									</div>
+							</div>
+                            <a href="#" class="button button-style1">Read More</a>
+                        </section>
+					
 					</div>
 				</div>
-			</div>	
-		
+				<p> This is the place </p>
+			</div>
+				
 		
 		<!-- Featured Ends Here -->
 
@@ -126,10 +208,46 @@
             
 		<!-- /Page -->
 
+		
+			
+		<!-- Contact Section -->
+			
+		<div class="w3-container w3-padding-32" id="contact">
+			<h3 class="w3-border-bottom w3-border-light-grey w3-padding-12">Contact</h3>
+			<p>Lets get in touch and talk about your and our next project.</p>
+			<input class="w3-input" type="text" placeholder="Name">
+			<input class="w3-input w3-section" type="text" placeholder="Email">
+			<input class="w3-input w3-section" type="text" placeholder="Subject">
+			<input class="w3-input w3-section" type="text" placeholder="Comment">
+				<button class="w3-btn w3-section">
+					<i class="fa fa-paper-plane"></i> SEND 
+				</button>
+		
 		<!-- Copyright -->
-            <div id="copyright" class="container">
-                Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+            <div id="copyright" class="w3-container">
+                <p> Follow us </p>
+				<br>
+				<span class="pennant"><span class="fa fa-youtube-square"></span></span>
+				<span class="pennant"><span class="fa fa-facebook-square"></span></span>
+				<span class="pennant"><span class="fa fa-instagram"></span></span>
+				<span class="pennant"><span class="fa fa-twitter-square"></span></span>
+				
             </div>
+		
+		
+		</div>
+  
+<!-- End page content -->
+
+
+<!-- Google Map -->
+<div id="googleMap" class="w3-grayscale" style="width:100%;height:450px;"></div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
 
 
 	</body>
